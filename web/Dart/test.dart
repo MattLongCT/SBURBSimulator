@@ -1,4 +1,4 @@
-//i guess main is like window.onload or some shit???
+// JR: i guess main is like window.onload or some shit???
 void main() {
   for (int i = 0; i < 5; i++) {
     //print('hello ${i + 1}');
@@ -9,7 +9,7 @@ void main() {
   p.makeSound();
   //print(p.name + " has " + p.hp.toString() + " hp remaining. ");
 }
-//http://blog.sethladd.com/2013/03/first-look-at-dart-mixins.html
+// JR: http://blog.sethladd.com/2013/03/first-look-at-dart-mixins.html
 
 class Animal{
   String sound;
