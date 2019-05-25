@@ -1,41 +1,42 @@
 
 /*
-  HEY FUTURE JR: HAVE QUEST CHAINS HAVE REQUIREMENTS TO DO, LIKE "NEED TO DO IT WITH A QUADRANT MATE" OR "NEED TO DO IT WITH A TIME PLAYER".  IF YOU CAN'T MEET THE REQUIREMENT, DO DIFFERENT CHAIN OR SOME SHIT.
-  WARNING: BEING ABANDONED FOR NOW CAUSE IT TURNS OUT MY JS WOULDN'T BE ABLE TO CALL THIS EASILY.
+   JR: HEY FUTURE JR: HAVE QUEST CHAINS HAVE REQUIREMENTS TO DO, LIKE "NEED TO DO IT WITH A QUADRANT MATE" 
+   JR: OR "NEED TO DO IT WITH A TIME PLAYER".  IF YOU CAN'T MEET THE REQUIREMENT, DO DIFFERENT CHAIN OR SOME SHIT.
+   JR: WARNING: BEING ABANDONED FOR NOW CAUSE IT TURNS OUT MY JS WOULDN'T BE ABLE TO CALL THIS EASILY.
 
-have list of sense words. taste, smell, look, feel, check tumblr:
-https://jadedresearcher.tumblr.com/post/163288497664/do-you-have-any-suggestions-on-how-to-make-dungeon
+   JR: have list of sense words. taste, smell, look, feel, check tumblr:
+   JR: https://jadedresearcher.tumblr.com/post/163288497664/do-you-have-any-suggestions-on-how-to-make-dungeon
 
-also, once derse and prospit are actual objects, let space player do the quests before entry.
-  when i do the land update i can stop that being 3 separate scenes and just have it be "which quest line do you want to do" and one of the quest lines is "go to sleep"
+   JR: also, once derse and prospit are actual objects, let space player do the quests before entry.
+   JR: when i do the land update i can stop that being 3 separate scenes and just have it be "which quest line do you want to do" and one of the quest lines is "go to sleep"
 
 
-  A planet should be tailored for a specific player.
-  It's land words should have one aspect related word, (only frog for space)
-  and one "random" word.
+   JR: A planet should be tailored for a specific player.
+   JR: It's land words should have one aspect related word, (only frog for space)
+   JR: and one "random" word.
 
-  The quests inside the land should be specific to the player.  They should
-  be based on class and aspect, most obviously, but also on their Interest Categories
-  (which have 14 possible thingies).
+   JR: The quests inside the land should be specific to the player.  They should
+   JR: be based on class and aspect, most obviously, but also on their Interest Categories
+   JR: (which have 14 possible thingies).
 
-  There should be quests for different internal land events.
-  PreDenizen, Denizen and Post Denizen are
-  categories currently in the sim.
+   JR: There should be quests for different internal land events.
+   JR: PreDenizen, Denizen and Post Denizen are
+   JR: categories currently in the sim.
 
-  Lands should have a "questCompletion" rate that determines which set of quests to use.
+   JR: Lands should have a "questCompletion" rate that determines which set of quests to use.
 
-  is prospit/derse a planet? a subtype of planet?
+   JR: is prospit/derse a planet? a subtype of planet?
 
-  each planet could have associated sense words? How does it feel? Smell? Sound?
-  could be an object, so a Player can TALK about their planet by getting the object and
-  the object has associated phrases or whatever. Don't just say "it's full of wind and shade, lol"
+   JR: each planet could have associated sense words? How does it feel? Smell? Sound?
+   JR: could be an object, so a Player can TALK about their planet by getting the object and
+   JR: the object has associated phrases or whatever. Don't just say "it's full of wind and shade, lol"
 
-  NOT random though. Each land word has list of traits and the Planet that comes from it
-  picks from one of the traits, just like consorts. Oh fuck, love this.
+   JR: NOT random though. Each land word has list of traits and the Planet that comes from it
+   JR: picks from one of the traits, just like consorts. Oh fuck, love this.
 
-  TODO Actually implement boonies for player.  Quests can give out boonies, and leveling up does, too.
-  So you can end up with classes like Rogue and Theif tripping boonies, and so have a lot of fraymotifs.
-  while other classes might have raw power but not a lot of fraymotifs.
+   JR: TODO Actually implement boonies for player.  Quests can give out boonies, and leveling up does, too.
+   JR: So you can end up with classes like Rogue and Theif tripping boonies, and so have a lot of fraymotifs.
+   JR: while other classes might have raw power but not a lot of fraymotifs.
 
  */
 class Planet{
@@ -46,9 +47,9 @@ class Planet{
 
 
 /*
-  Dead Planets do everything a planet does, but ALSO has a timelimit
-  a penalty for not winning before timelimit
-  and a reward for winning before timelimit.
+   JR: Dead Planets do everything a planet does, but ALSO has a timelimit
+   JR: a penalty for not winning before timelimit
+   JR: and a reward for winning before timelimit.
  */
 class DeadPlanet extends Planet{
 
@@ -56,33 +57,33 @@ class DeadPlanet extends Planet{
 
 
 /*
-  A QuestChain is a collection of quests that must be completed in order.
+   JR: A QuestChain is a collection of quests that must be completed in order.
 
-  it is associated with a reward for completion. or something. still planning.
+   JR: it is associated with a reward for completion. or something. still planning.
 
-  IDEA: MAKE THEM BRANCHING BASED ON CLASS.  A PRINCE MIGHT DO DESTRUCTIVE THINGS TO WIN, WHILE A SYLPH MEDDLE-WINS
+   JR: IDEA: MAKE THEM BRANCHING BASED ON CLASS.  A PRINCE MIGHT DO DESTRUCTIVE THINGS TO WIN, WHILE A SYLPH MEDDLE-WINS
  */
 class QuestChain{
   List<Quest> quests;
-  List<Reward> rewards; //most questChains only have one reward, but i won't limit things.
+  List<Reward> rewards; // JR: most questChains only have one reward, but i won't limit things.
 
 
 }
 
 
 /*
-  A Quest is just flavor text.
-  maybe in the future it can be upgraded to be failable, maybe have a power requirement to pass?
+   JR: A Quest is just flavor text.
+   JR: maybe in the future it can be upgraded to be failable, maybe have a power requirement to pass?
  */
 class Quest{
   String flavorText;
-  List<Reward> rewards; //most quests only have one reward, but i won't limit things.
+  List<Reward> rewards; // JR: most quests only have one reward, but i won't limit things.
 }
 
 /*
-  base level reward just calls increasePower on the player passed to it.
-  but want to extend it so there is FraymotifReward, ItemReward, WeaponReward
-  etc. Each will call teh super reward so that all rewards at minimum increase Power.
+   JR: base level reward just calls increasePower on the player passed to it.
+   JR: but want to extend it so there is FraymotifReward, ItemReward, WeaponReward
+   JR: etc. Each will call teh super reward so that all rewards at minimum increase Power.
  */
 class Reward{
 
